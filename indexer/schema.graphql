@@ -1,0 +1,127 @@
+type ProtocolMetrics {
+  id: ID!
+  defenseCount: Int!
+  versionCount: Int!
+  stableVersionCount: Int!
+  quarantinedVersionCount: Int!
+  receiptCount: Int!
+  attestationCount: Int!
+  passingAttestationCount: Int!
+  protectedEventCount: BigInt!
+  rewardClaimed: BigInt!
+  validatorThreshold: Int!
+  lastIndexedBlock: BigInt!
+  lastIndexedAt: BigInt!
+}
+
+type Defense {
+  id: ID!
+  authorAgentId: BigInt!
+  registeredAt: BigInt!
+  transactionHash: String!
+  versions: [DefenseVersion!]! @derivedFrom(field: "defense")
+}
+
+type DefenseVersion {
+  id: ID!
+  defense: Defense!
+  status: Int!
+  replayReportHash: String
+  validationFinal: Boolean!
+  passingAttestations: Int!
+  validationThreshold: Int!
+  publishedAt: BigInt!
+  updatedAt: BigInt!
+  transactionHash: String!
+  attestations: [Attestation!]! @derivedFrom(field: "version")
+}
+
+type SafetyAction {
+  id: ID!
+  version: DefenseVersion!
+  reasonCode: String!
+  evidenceHash: String!
+  actor: String!
+  replacementVersionKey: String!
+  timestamp: BigInt!
+  transactionHash: String!
+}
+
+type Validator {
+  id: ID!
+  wallet: String!
+  active: Boolean!
+  submittedCount: Int!
+  passingCount: Int!
+  challengedCount: Int!
+  updatedAt: BigInt!
+  attestations: [Attestation!]! @derivedFrom(field: "validator")
+}
+
+type Attestation {
+  id: ID!
+  version: DefenseVersion!
+  validator: Validator!
+  passed: Boolean!
+  challenged: Boolean!
+  challengeReasonCode: String
+  challengeEvidenceHash: String
+  submittedAt: BigInt!
+  transactionHash: String!
+}
+
+type ThreatReceipt {
+  id: ID!
+  attackClass: String!
+  reporterAgentId: BigInt!
+  linkedVersionKey: String
+  resolution: Int!
+  publishedAt: BigInt!
+  updatedAt: BigInt!
+  transactionHash: String!
+}
+
+type UsageCommitment {
+  id: ID!
+  epoch: BigInt!
+  adopterAgentId: BigInt!
+  root: String!
+  committedAt: BigInt!
+  transactionHash: String!
+}
+
+type UsageBatch {
+  id: ID!
+  versionKey: String!
+  count: BigInt!
+  committer: String!
+  challenged: Boolean!
+  finalized: Boolean!
+  reasonCode: String
+  evidenceHash: String
+  rewardAllocated: BigInt!
+  recordedAt: BigInt!
+  updatedAt: BigInt!
+  transactionHash: String!
+}
+
+type RewardClaim {
+  id: ID!
+  epoch: BigInt!
+  recipient: String!
+  amount: BigInt!
+  claimedAt: BigInt!
+  transactionHash: String!
+}
+
+type PauseState {
+  id: ID!
+  contract: String!
+  scope: String!
+  actor: String!
+  paused: Boolean!
+  reasonCode: String!
+  expiresAt: BigInt!
+  updatedAt: BigInt!
+  transactionHash: String!
+}

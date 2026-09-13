@@ -1,0 +1,31 @@
+{
+  "name": "@dadieng/sdk",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Local-first security SDK and shared immune system for AI agents.",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "git+https://github.com/XaidenLabs/Dadieng.git", "directory": "packages/sdk" },
+  "homepage": "https://dadieng.vercel.app/docs",
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=22" },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@dadieng/contracts-client": "workspace:*",
+    "@dadieng/defense-module": "workspace:*",
+    "@dadieng/policy-engine": "workspace:*",
+    "@dadieng/receipt-sanitizer": "workspace:*",
+    "@dadieng/schemas": "workspace:*",
+    "viem": "^2.38.6"
+  }
+}

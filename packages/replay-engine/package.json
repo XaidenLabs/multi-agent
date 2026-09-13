@@ -1,0 +1,26 @@
+{
+  "name": "@dadieng/replay-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "demo": "tsx src/demo.ts",
+    "report:mcp": "pnpm --filter @dadieng/schemas build && pnpm --filter @dadieng/defense-module build && tsx src/build-mcp-report.ts"
+  },
+  "dependencies": {
+    "@dadieng/defense-module": "workspace:*",
+    "@dadieng/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5"
+  }
+}

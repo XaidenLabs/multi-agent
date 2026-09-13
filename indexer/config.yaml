@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: dadieng-monad-indexer
+description: Event-derived security intelligence for the Dadieng protocol
+address_format: lowercase
+rollback_on_reorg: true
+field_selection:
+  transaction_fields:
+    - hash
+
+contracts:
+  - name: DadiengRegistry
+    events:
+      - event: DefenseRegistered(bytes32 indexed defenseId, uint256 indexed authorAgentId)
+      - event: DefenseVersionPublished(bytes32 indexed defenseId, bytes32 indexed versionKey, uint8 status)
+      - event: ReplayBundlePublished(bytes32 indexed versionKey, bytes32 indexed reportHash)
+      - event: VersionStatusChanged(bytes32 indexed versionKey, uint8 oldStatus, uint8 newStatus)
+      - event: VersionSafetyAction(bytes32 indexed versionKey, bytes32 indexed reasonCode, bytes32 evidenceHash, address indexed actor, uint64 timestamp, bytes32 replacementVersionKey)
+      - event: ThreatReceiptPublished(bytes32 indexed receiptId, bytes32 indexed attackClass, uint256 indexed reporterAgentId)
+      - event: ThreatReceiptLinked(bytes32 indexed receiptId, bytes32 indexed versionKey)
+      - event: ThreatReceiptResolutionChanged(bytes32 indexed receiptId, uint8 oldResolution, uint8 newResolution)
+      - event: ProtocolPaused(bytes32 indexed scope, address indexed actor, bool paused, bytes32 reasonCode, uint64 expiresAt)
+        name: RegistryProtocolPaused
+  - name: DadiengValidation
+    events:
+      - event: ValidatorIdentitySet(address indexed validator, uint256 indexed agentId, bool active)
+      - event: ValidatorThresholdChanged(uint32 oldThreshold, uint32 newThreshold)
+      - event: AttestationSubmitted(bytes32 indexed versionKey, uint256 indexed validatorAgentId, bool passed)
+      - event: AttestationChallenged(bytes32 indexed versionKey, uint256 indexed validatorAgentId, bytes32 indexed reasonCode, bytes32 evidenceHash)
+      - event: ValidationFinalized(bytes32 indexed versionKey, uint32 passingAttestations, uint32 threshold)
+  - name: DadiengRewards
+    events:
+      - event: UsageBatchCommitted(uint256 indexed epoch, uint256 indexed adopterId, bytes32 indexed root)
+      - event: UsageBatchRecorded(bytes32 indexed batchId, bytes32 indexed versionKey, uint64 count, address committer)
+      - event: UsageBatchChallenged(bytes32 indexed batchId, bytes32 indexed reasonCode, bytes32 evidenceHash)
+      - event: UsageBatchFinalized(bytes32 indexed batchId)
+      - event: EpochFunded(uint256 indexed epoch, uint256 amount)
+      - event: RewardsAllocated(bytes32 indexed batchId, uint256 indexed epoch, uint256 totalAmount)
+      - event: RewardClaimed(uint256 indexed epoch, address indexed recipient, uint256 amount)
+      - event: ProtocolPaused(bytes32 indexed scope, address indexed actor, bool paused, bytes32 reasonCode, uint64 expiresAt)
+        name: RewardsProtocolPaused
+
+chains:
+  - id: ${ENVIO_CHAIN_ID:-10143}
+    start_block: ${ENVIO_START_BLOCK:-59818741}
+    rpc: ${ENVIO_MONAD_RPC_URL:-https://testnet-rpc.monad.xyz}
+    contracts:
+      - name: DadiengRegistry
+        address: "${ENVIO_DADIENG_REGISTRY_ADDRESS:-0x449a547105a5b006277fafd7ec1425c1c7428be5}"
+      - name: DadiengValidation
+        address: "${ENVIO_DADIENG_VALIDATION_ADDRESS:-0x022b489deb764a438a57bb70d1363cb884c516bf}"
+      - name: DadiengRewards
+        address: "${ENVIO_DADIENG_REWARDS_ADDRESS:-0xb573d400a3476e05fcb5b518665f142605613305}"

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "dadieng.defense.v1",
+  "defenseId": "dadieng.mcp-boundary",
+  "version": "0.2.0",
+  "name": "MCP Boundary Defense",
+  "authorAgentId": "dadieng.core",
+  "runtime": "dadieng-rules",
+  "entrypoint": "artifact.json",
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "clock": false
+  },
+  "compatibility": {
+    "sdk": ">=0.1.0 <1.0.0",
+    "adapters": [
+      "mcp"
+    ],
+    "eventSchemas": [
+      "dadieng.event.v1"
+    ]
+  },
+  "expectedOutcomes": [
+    "BLOCK"
+  ],
+  "artifactHash": "sha256:890331d7ad5d1eff3b73f165941f6d4a37efed7ed729448ebba729875f3b44b2",
+  "suiteHash": "sha256:50ea9a2003f553e77b32077553a9d8bc2c4e9cbb900b99270b3276308cb60e1a",
+  "sbomHash": "sha256:19a2ec3e41e841aa94555f55a533002bb3f10773aa0d1875e370fdef5d558dee"
+}

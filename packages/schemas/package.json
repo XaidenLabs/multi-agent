@@ -1,0 +1,26 @@
+{
+  "name": "@dadieng/schemas",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Canonical schemas and TypeScript types for the Dadieng agent security protocol.",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "git+https://github.com/XaidenLabs/Dadieng.git", "directory": "packages/schemas" },
+  "homepage": "https://dadieng.vercel.app/docs",
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=22" },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.1.5"
+  }
+}

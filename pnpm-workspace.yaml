@@ -1,0 +1,21 @@
+packages:
+  - "apps/*"
+  - "contracts"
+  - "packages/*"
+  - "examples/*"
+  - "indexer"
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+
+# Envio 3.9.0 pins older compatible minors. Keep the official SDK while
+# forcing patched releases until Envio updates its own dependency ranges.
+overrides:
+  "envio>express": "4.22.1"
+  "envio>react": "19.2.8"
+  "envio>viem": "2.56.3"
+  "qs@<6.16.0": "6.16.0"
+  "esbuild@>=0.27.3 <0.28.1": "0.28.2"

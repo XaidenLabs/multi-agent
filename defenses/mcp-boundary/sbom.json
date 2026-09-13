@@ -1,0 +1,6 @@
+{
+  "schemaVersion": "dadieng.sbom.v1",
+  "defenseId": "dadieng.mcp-boundary",
+  "format": "dadieng-sbom-v1",
+  "packages": []
+}

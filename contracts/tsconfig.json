@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["hardhat.config.ts", "ignition/**/*.ts", "test/**/*.ts", "artifacts/**/*.d.ts"]
+}

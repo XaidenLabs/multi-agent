@@ -1,0 +1,5 @@
+{
+  "schedule": "0 */5 * * * *",
+  "controlPlaneUrl": "https://replace-with-preview.example/v1/cre/validation-cycle",
+  "network": "monad-testnet"
+}

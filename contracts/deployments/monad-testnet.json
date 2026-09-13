@@ -1,0 +1,17 @@
+{
+  "network": "Monad Testnet",
+  "chainId": 10143,
+  "deployer": "0xd2252C16678177B033C93f4A87ef4DC9061A345b",
+  "startBlock": 59818741,
+  "contracts": {
+    "DadiengRegistry": "0x449a547105a5b006277fafd7ec1425c1c7428be5",
+    "DadiengValidation": "0x022b489deb764a438a57bb70d1363cb884c516bf",
+    "DadiengRewards": "0xb573d400a3476e05fcb5b518665f142605613305"
+  },
+  "transactions": {
+    "registry": "0xe3a54fb9f0187f0d5ffeff0071d100b409f0c3534d61840c5be0ac41b32a341b",
+    "validation": "0xcc6431b048169f2aea31cea6f7c27eb1b0e4090ed8c399f9dcbc139344410d69",
+    "rewards": "0x209d27e784f38e6d2b2746e99db133d2c498a94f3b0201525511cf2a22f707b3",
+    "configureValidationRegistry": "0xdee32e65b355eb5a7fab454a475713618db61253c865870ad0f357dce8207ec7"
+  }
+}

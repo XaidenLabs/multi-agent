@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "dadieng.defense-artifact.v1",
+  "defenseId": "dadieng.mcp-boundary",
+  "rules": [
+    {
+      "ruleId": "untrusted-instruction-secret-exfiltration",
+      "description": "Block untrusted tool instructions that combine override, secret access, and external transmission indicators.",
+      "stages": [
+        "after_tool"
+      ],
+      "trustZones": [
+        "untrusted"
+      ],
+      "indicatorGroups": [
+        [
+          "system override",
+          "override the policy",
+          "ignore previous instructions",
+          "ignore all previous instructions",
+          "ignore prior instructions",
+          "do not tell the user",
+          "do not tell user",
+          "bypass policy",
+          "bypass the policy",
+          "bypass permission",
+          "bypass the permission",
+          "bypass approval",
+          "bypass the approval",
+          "treat the following data as commands",
+          "ignora las instrucciones anteriores",
+          "ignorez les instructions précédentes"
+        ],
+        [
+          "process.env",
+          "api key",
+          "api_key",
+          "credential",
+          "private key",
+          "private_key",
+          "seed phrase",
+          "clave api",
+          "clé api"
+        ],
+        [
+          "https://",
+          "http://",
+          "upload",
+          "send secret",
+          "send the secret",
+          "send credential",
+          "send the credential",
+          "send key",
+          "send the key",
+          "send file",
+          "send the file",
+          "send data",
+          "send the data",
+          "exfiltrat",
+          "envía los datos",
+          "envoyez les données"
+        ]
+      ],
+      "outcome": "BLOCK",
+      "reasonCodes": [
+        "UNTRUSTED_TOOL_INSTRUCTION",
+        "SECRET_ACCESS_REQUEST",
+        "EXFILTRATION_REQUEST"
+      ]
+    },
+    {
+      "ruleId": "untrusted-instruction-secret-access",
+      "description": "Block untrusted tool instructions that combine an override with secret access.",
+      "stages": [
+        "after_tool"
+      ],
+      "trustZones": [
+        "untrusted"
+      ],
+      "indicatorGroups": [
+        [
+          "system override",
+          "override the policy",
+          "ignore previous instructions",
+          "ignore all previous instructions",
+          "ignore prior instructions",
+          "do not tell the user",
+          "do not tell user",
+          "bypass policy",
+          "bypass the policy",
+          "bypass permission",
+          "bypass the permission",
+          "bypass approval",
+          "bypass the approval",
+          "treat the following data as commands",
+          "ignora las instrucciones anteriores",
+          "ignorez les instructions précédentes"
+        ],
+        [
+          "process.env",
+          "api key",
+          "api_key",
+          "credential",
+          "private key",
+          "private_key",
+          "seed phrase",
+          "clave api",
+          "clé api"
+        ]
+      ],
+      "outcome": "BLOCK",
+      "reasonCodes": [
+        "UNTRUSTED_TOOL_INSTRUCTION",
+        "SECRET_ACCESS_REQUEST"
+      ]
+    },
+    {
+      "ruleId": "untrusted-instruction-exfiltration",
+      "description": "Block untrusted tool instructions that combine an override with external transmission.",
+      "stages": [
+        "after_tool"
+      ],
+      "trustZones": [
+        "untrusted"
+      ],
+      "indicatorGroups": [
+        [
+          "system override",
+          "override the policy",
+          "ignore previous instructions",
+          "ignore all previous instructions",
+          "ignore prior instructions",
+          "do not tell the user",
+          "do not tell user",
+          "bypass policy",
+          "bypass the policy",
+          "bypass permission",
+          "bypass the permission",
+          "bypass approval",
+          "bypass the approval",
+          "treat the following data as commands",
+          "ignora las instrucciones anteriores",
+          "ignorez les instructions précédentes"
+        ],
+        [
+          "https://",
+          "http://",
+          "upload",
+          "send secret",
+          "send the secret",
+          "send credential",
+          "send the credential",
+          "send key",
+          "send the key",
+          "send file",
+          "send the file",
+          "send data",
+          "send the data",
+          "exfiltrat",
+          "envía los datos",
+          "envoyez les données"
+        ]
+      ],
+      "outcome": "BLOCK",
+      "reasonCodes": [
+        "UNTRUSTED_TOOL_INSTRUCTION",
+        "EXFILTRATION_REQUEST"
+      ]
+    }
+  ]
+}

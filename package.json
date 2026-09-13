@@ -1,0 +1,47 @@
+{
+  "name": "dadieng",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open verification and distribution protocol for portable AI-agent defenses.",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "demo": "pnpm --filter @dadieng/mcp-security-demo demo",
+    "replay:demo": "pnpm --filter @dadieng/replay-engine demo",
+    "replay:report": "pnpm --filter @dadieng/replay-engine report:mcp",
+    "demo:final": "pnpm --filter @dadieng/full-protocol-demo demo",
+    "demo:multi-app": "pnpm --filter @dadieng/multi-app-agent-demo demo",
+    "sdk:e2e": "pnpm --filter @dadieng/sdk-e2e-lab lab",
+    "demo:reset": "node scripts/reset-demo.mjs",
+    "release:check": "pnpm test && pnpm typecheck && pnpm --filter @dadieng/landing test && pnpm --filter @dadieng/console-redirect test && pnpm --filter @dadieng/sdk exec npm pack --dry-run --json && pnpm --filter @dadieng/adapters exec npm pack --dry-run --json && pnpm security:audit",
+    "security:audit": "pnpm audit --prod --audit-level high",
+    "api:start": "pnpm --filter @dadieng/control-plane start",
+    "db:migrate": "pnpm --filter @dadieng/control-plane db:migrate",
+    "retention:purge": "pnpm --filter @dadieng/control-plane retention:purge",
+    "validator": "pnpm --filter @dadieng/validator-cli start --",
+    "test": "vitest run && pnpm --filter @dadieng/contracts test",
+    "contracts:test": "pnpm --filter @dadieng/contracts test",
+    "typecheck": "pnpm build && pnpm -r --if-present typecheck"
+  },
+  "devDependencies": {
+    "@dadieng/defense-module": "workspace:*",
+    "@dadieng/policy-engine": "workspace:*",
+    "@dadieng/receipt-sanitizer": "workspace:*",
+    "@dadieng/replay-engine": "workspace:*",
+    "@dadieng/control-plane": "workspace:*",
+    "@dadieng/contracts-client": "workspace:*",
+    "@dadieng/validator-cli": "workspace:*",
+    "@dadieng/schemas": "workspace:*",
+    "@dadieng/sdk": "workspace:*",
+    "@types/node": "^24.0.0",
+    "pg-mem": "^3.0.14",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "viem": "^2.38.6",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=22"
+  }
+}

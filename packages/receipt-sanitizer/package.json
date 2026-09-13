@@ -1,0 +1,26 @@
+{
+  "name": "@dadieng/receipt-sanitizer",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Privacy-safe threat receipt and encrypted evidence pipeline for Dadieng.",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "git+https://github.com/XaidenLabs/Dadieng.git", "directory": "packages/receipt-sanitizer" },
+  "homepage": "https://dadieng.vercel.app/docs",
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=22" },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@dadieng/schemas": "workspace:*"
+  }
+}
