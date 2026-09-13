@@ -8,6 +8,7 @@ Dadieng is an open verification and distribution protocol for portable AI-agent 
 
 - **Live product:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/](https://dadiengprotocol.luminous-hovercraft.workers.dev/)
 - **Proof page:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/proof](https://dadiengprotocol.luminous-hovercraft.workers.dev/proof)
+- **Doc page:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/proof](https://dadiengprotocol.luminous-hovercraft.workers.dev/doc)
 - **Example application:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/commander](https://dadiengprotocol.luminous-hovercraft.workers.dev/commander)
 - **Monad Testnet:** chain ID `10143`
 
