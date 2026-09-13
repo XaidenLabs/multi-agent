@@ -6,9 +6,9 @@ Dadieng is an open verification and distribution protocol for portable AI-agent 
 
 > Threat intelligence tells agents what happened. Dadieng proves which defense works, preserves legitimate behavior, and can be safely distributed.
 
-- **Live product:** https://dadiengprotocol.luminous-hovercraft.workers.dev
-- **Proof page:** https://dadiengprotocol.luminous-hovercraft.workers.dev/proof
-- **Example application:** https://dadiengprotocol.luminous-hovercraft.workers.dev/commander
+- **Live product:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/](https://dadiengprotocol.luminous-hovercraft.workers.dev/)
+- **Proof page:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/proof](https://dadiengprotocol.luminous-hovercraft.workers.dev/proof)
+- **Example application:** [https://dadiengprotocol.luminous-hovercraft.workers.dev/commander](https://dadiengprotocol.luminous-hovercraft.workers.dev/commander)
 - **Monad Testnet:** chain ID `10143`
 
 ## The problem
