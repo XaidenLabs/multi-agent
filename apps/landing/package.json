@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
+    "dev": "node init && vite",
+    "build": "node init && tsc -b && vite build && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
     "test": "npm run build && node --test tests/content.test.mjs",
     "lint": "eslint .",
     "preview": "vite preview"

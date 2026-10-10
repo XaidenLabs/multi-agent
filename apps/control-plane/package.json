@@ -9,13 +9,15 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json && mkdir -p dist/migrations && cp src/migrations/*.sql dist/migrations/",
+    "build": "node init && tsc -p tsconfig.json && mkdir -p dist/migrations && cp src/migrations/*.sql dist/migrations/",
     "db:migrate": "tsx src/migrate.ts",
     "retention:purge": "tsx src/retention.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "start": "tsx src/start.ts"
+    "start": "node init && tsx src/start.ts"
   },
   "dependencies": {
     "@dadieng/contracts-client": "workspace:*",

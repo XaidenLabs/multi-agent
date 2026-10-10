@@ -9,9 +9,11 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node init && tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "demo": "tsx src/demo.ts",
     "report:mcp": "pnpm --filter @dadieng/schemas build && pnpm --filter @dadieng/defense-module build && tsx src/build-mcp-report.ts"

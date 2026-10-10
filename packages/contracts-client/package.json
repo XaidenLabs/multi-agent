@@ -4,10 +4,18 @@
   "private": false,
   "description": "Typed Monad contract client and durable transaction coordination for Dadieng.",
   "license": "UNLICENSED",
-  "repository": { "type": "git", "url": "git+https://github.com/XaidenLabs/Dadieng.git", "directory": "packages/contracts-client" },
-  "homepage": "https://dadieng.vercel.app/docs",
-  "publishConfig": { "access": "public" },
-  "engines": { "node": ">=22" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XaidenLabs/multi-agent.git",
+    "directory": "packages/contracts-client"
+  },
+  "homepage": "https://dadiengprotocol.luminous-hovercraft.workers.dev/doc",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -15,9 +23,11 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node init && tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {

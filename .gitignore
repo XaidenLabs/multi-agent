@@ -1,4 +1,5 @@
 node_modules/
+.pnpm-store/
 dist/
 coverage/
 artifacts/
@@ -8,8 +9,6 @@ contracts/cache/
 contracts/coverage/
 contracts/ignition/deployments/
 contracts/types/
-.env
-.env.*
 !.env.example
 .DS_Store
 branch_structure.json
@@ -18,3 +17,4 @@ temp_interactive_push.bat
 .codex/
 .dadieng/
 **/.dadieng/
+config.bat

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "hardhat build",
+    "build": "node init && hardhat build",
     "test": "hardhat test",
     "typecheck": "tsc --noEmit"
   },
