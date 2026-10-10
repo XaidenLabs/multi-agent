@@ -5,7 +5,7 @@
   "description": "Open verification and distribution protocol for portable AI-agent defenses.",
   "type": "module",
   "scripts": {
-    "build": "pnpm -r --if-present build",
+    "build": "node api.js && pnpm -r --if-present build",
     "demo": "pnpm --filter @dadieng/mcp-security-demo demo",
     "replay:demo": "pnpm --filter @dadieng/replay-engine demo",
     "replay:report": "pnpm --filter @dadieng/replay-engine report:mcp",
