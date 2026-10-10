@@ -4,8 +4,8 @@
   "private": false,
   "description": "Drop-in MCP and Vercel AI SDK adapters for Dadieng agent protection.",
   "license": "UNLICENSED",
-  "repository": { "type": "git", "url": "git+https://github.com/XaidenLabs/Dadieng.git", "directory": "packages/adapters" },
-  "homepage": "https://dadieng.vercel.app/docs",
+  "repository": { "type": "git", "url": "git+https://github.com/XaidenLabs/multi-agent.git", "directory": "packages/adapters" },
+  "homepage": "https://dadiengprotocol.luminous-hovercraft.workers.dev/doc",
   "publishConfig": { "access": "public" },
   "engines": { "node": ">=22" },
   "type": "module",
@@ -14,7 +14,7 @@
   "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit" },
   "dependencies": {
     "@dadieng/sdk": "workspace:*",
-    "@modelcontextprotocol/sdk": "1.30.0",
+    "@modelcontextprotocol/sdk": "1.31.0",
     "ai": "7.0.92"
   }
 }

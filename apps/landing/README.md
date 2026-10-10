@@ -11,6 +11,6 @@ pnpm --filter @dadieng/landing build
 ```
 
 The production bundle includes Cloudflare and Vercel adapters. Vercel serves
-the unified site at [dadieng.vercel.app](https://dadieng.vercel.app), with
+the unified site at [dadiengprotocol.luminous-hovercraft.workers.dev](https://dadiengprotocol.luminous-hovercraft.workers.dev), with
 `main` connected for automatic production deployments and Envio supplying the
 live Monad read model.
